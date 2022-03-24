@@ -12,3 +12,10 @@ class LoginPageLocators():
     REGISTRARION_PASSWORD = (By.NAME, "registration-password1")
     REGISTRARION_CONFIRM_PASSWORD = (By.NAME, "registration-password2")
     REGISTRARION_BUTTON = (By.NAME, "registration_submit")
+
+class ProductPageLocators():
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, "button.btn.btn-add-to-basket")
+    PRODUCT_NAME = (By.XPATH, "//div[@class = 'col-sm-6 product_main']/h1")
+    PRODUCT_PRICE = (By.XPATH, "//div[@class = 'col-sm-6 product_main']/p[@class = 'price_color']")
+    PRODUCT_NAME_IN_BASKET = (By.CSS_SELECTOR, "div.alert-success div.alertinner strong")
+    PRODUCT_PRICE_IN_BASKET = (By.CSS_SELECTOR, "div.alertinner p strong")
