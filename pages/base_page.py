@@ -57,3 +57,10 @@ class BasePage():
         except TimeoutException:
             return False
         return True
+
+    def should_be_busket_button(self):
+        assert self.is_element_present(*BasePageLocators.BUSKET_BUTTON), "Busket button is not presented"
+
+    def go_to_busket_page(self):
+        busket = self.browser.find_element(*BasePageLocators.BUSKET_BUTTON)
+        busket.click()
