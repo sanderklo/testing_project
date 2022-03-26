@@ -3,11 +3,13 @@ from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
 from .pages.basket_page import BasketPage
 
+BASE_LINK = "http://selenium1py.pythonanywhere.com/"
+
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
-        self.link = "http://selenium1py.pythonanywhere.com/"
+        self.link = BASE_LINK
         self.page = MainPage(browser, self.link)
         self.page.open() 
 
@@ -21,7 +23,7 @@ class TestLoginFromMainPage():
 
     
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/"
+    link = BASE_LINK
     page = MainPage(browser, link)
     page.open()
     page.should_be_busket_button()
